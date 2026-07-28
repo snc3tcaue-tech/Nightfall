@@ -1,0 +1,81 @@
+/* RESET */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:wght@300;400;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#0E0E0E;
+
+    --surface:#181818;
+
+    --surface-hover:#202020;
+
+    --border:#303030;
+
+    --primary:#D8D8D8;
+
+    --text:#F2F2F2;
+
+    --text-secondary:#9A9A9A;
+
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:Georgia, serif;
+
+    line-height:1.6;
+
+    min-height:100vh;
+}
+
+h1,h2,h3{
+
+    font-family:"Cinzel", serif;
+
+    font-weight:600;
+}
+
+p,a,button,input{
+
+    font-family:"Cormorant Garamond", serif;
+}
+
+a{
+
+    color:inherit;
+    text-decoration:none;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+.page-title{
+
+    text-align:center;
+
+    font-family:"Cinzel", serif;
+
+    font-size:2.3rem;
+
+    letter-spacing:5px;
+
+    font-weight:600;
+
+    margin:2rem 0;
+
+}

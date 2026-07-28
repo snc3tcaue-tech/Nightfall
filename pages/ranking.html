@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightfall | Ranking</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/css/ranking.css">
+</head>
+
+<body>
+
+<main class="ranking">
+
+    <h1 class="title">Arquivo das Almas</h1>
+
+    <div class="ranking-grid">
+
+        <section class="box">
+            <h2>Memória</h2>
+            <div id="ranking-memoria"></div>
+        </section>
+
+        <section class="box">
+            <h2>Puzzle</h2>
+            <div id="ranking-puzzle"></div>
+        </section>
+
+    </div>
+
+    <a href="menu.html" class="btn-back">Voltar</a>
+
+</main>
+
+<script src="../assets/js/ranking.js"></script>
+
+<script>
+
+function renderRanking(){
+
+    const dados = obterRanking();
+
+    const memoria = document.getElementById("ranking-memoria");
+    const puzzle = document.getElementById("ranking-puzzle");
+
+    const mem = dados.filter(r => r.jogo === "Memória");
+    const puz = dados.filter(r => r.jogo === "Puzzle");
+
+    memoria.innerHTML = mem.length ? mem.map((r,i)=>`
+        <div class="card-rank">
+            <span>#${i+1}</span>
+            <div>
+                <p>${r.nome}</p>
+                <small>${r.tempo}s • ${r.movimentos ?? "-"} mov</small>
+            </div>
+        </div>
+    `).join("") : "<p class='empty'>Sem registros</p>";
+
+    puzzle.innerHTML = puz.length ? puz.map((r,i)=>`
+        <div class="card-rank">
+            <span>#${i+1}</span>
+            <div>
+                <p>${r.nome}</p>
+                <small>${r.tempo}s • ${r.movimentos} mov</small>
+            </div>
+        </div>
+    `).join("") : "<p class='empty'>Sem registros</p>";
+
+}
+
+renderRanking();
+
+</script>
+
+</body>
+</html>

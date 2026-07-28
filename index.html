@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nightfall | Jogos das Sombras</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+
+</head>
+
+<body>
+
+    <video autoplay muted loop playsinline id="home-video">
+
+    <source src="assets/video/campo.mp4" type="video/mp4">
+
+</video>
+
+<div class="home-overlay"></div>
+
+<main class="home">
+
+    <section class="hero">
+
+        <h1 class="logo">
+            Nightfall
+        </h1>
+
+        <p class="subtitle">
+            Jogos das Sombras
+        </p>
+
+        <p class="description">
+            Uma coleção de jogos offline inspirados na estética gótica.
+            Entre no Nightfall e desafie sua memória e sua percepção.
+        </p>
+
+    </section>
+
+    <section class="login-card">
+
+        <h2>Quem atravessa as sombras?</h2>
+
+        <input
+            type="text"
+            id="nomeJogador"
+            maxlength="20"
+            placeholder="Digite seu nome">
+
+        <button id="entrar">
+            Entrar
+        </button>
+
+    </section>
+
+</main>
+
+<script>
+
+const input = document.getElementById("nomeJogador");
+
+const ultimoNome = localStorage.getItem("nightfallPlayer");
+
+if(ultimoNome){
+
+    input.value = ultimoNome;
+
+}
+
+document.getElementById("entrar").onclick = ()=>{
+
+    const nome = input.value.trim();
+
+    if(nome.length < 2){
+
+        alert("Digite seu nome.");
+
+        return;
+
+    }
+
+    localStorage.setItem("nightfallPlayer", nome);
+
+    window.location.href = "pages/menu.html";
+
+};
+
+</script>
+
+</body>
+
+</html>

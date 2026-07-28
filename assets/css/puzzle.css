@@ -1,0 +1,267 @@
+
+.puzzle {
+    width: 100%;
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    color: #ddd;
+}
+
+
+.status {
+
+    display: flex;
+    gap: 40px;
+
+    margin-bottom: 30px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+
+}
+
+
+#tabuleiro {
+
+    position: relative;
+
+    width: 360px;
+    height: 360px;
+
+    background: #080808;
+
+    border: 1px solid #333;
+
+    box-shadow:
+        0 0 30px rgba(0,0,0,.9);
+
+}
+
+
+.peca {
+
+    cursor: grab;
+
+    background-repeat: no-repeat;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    box-sizing: border-box;
+
+    transition:
+        left .15s ease,
+        top .15s ease;
+
+}
+
+
+.peca:active {
+
+    cursor: grabbing;
+
+}
+
+
+#vitoria {
+
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: #ddd;
+
+}
+
+
+#vitoria h2 {
+
+    font-family: "Cinzel", serif;
+
+    letter-spacing: 2px;
+
+}
+
+
+#vitoria button {
+
+    margin-top: 15px;
+
+    padding: 10px 25px;
+
+    background: #111;
+
+    color: #ddd;
+
+    border:
+
+    1px solid #555;
+
+    cursor: pointer;
+
+}
+
+/* CARD DE VITÓRIA */
+
+#vitoria {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+    rgba(0,0,0,.75);
+
+    z-index: 100;
+
+}
+
+
+.card-vitoria {
+
+    position: relative;
+
+    width: 320px;
+
+    padding: 40px 30px;
+
+    background:
+
+    linear-gradient(
+        145deg,
+        #151515,
+        #080808
+    );
+
+
+    border:
+
+    1px solid #444;
+
+
+    box-shadow:
+
+    0 0 40px rgba(0,0,0,.9);
+
+
+    text-align:center;
+
+
+}
+
+
+.card-vitoria h2 {
+
+    margin-bottom:30px;
+
+    font-family:"Cinzel",serif;
+
+    color:#ddd;
+
+    letter-spacing:2px;
+
+}
+
+
+
+.card-vitoria button {
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:12px;
+
+
+    background:#111;
+
+    color:#ccc;
+
+
+    border:
+
+    1px solid #555;
+
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:18px;
+
+
+    cursor:pointer;
+
+
+    transition:.2s;
+
+}
+
+
+
+.card-vitoria button:hover {
+
+    background:#222;
+
+    color:white;
+
+}
+
+
+
+/* X FECHAR */
+
+.fechar-vitoria {
+
+    position:absolute;
+
+
+    top:8px;
+
+    right:10px;
+
+
+    width:auto !important;
+
+
+    padding:0 !important;
+
+
+    margin:0 !important;
+
+
+    border:none !important;
+
+
+    background:none !important;
+
+
+    color:#aaa;
+
+
+    font-family:Arial,sans-serif;
+
+    font-size:32px;
+
+
+    line-height:1;
+
+
+}
+
+
+
+.fechar-vitoria:hover {
+
+    color:white;
+
+    transform:scale(1.15);
+
+}

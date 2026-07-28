@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nightfall | Hub</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/css/menu.css">
+
+</head>
+
+<body>
+
+<main class="hub">
+
+    <header class="hub-header">
+
+        <h1>Nightfall</h1>
+
+        <p>
+            Bem-vindo,
+            <span id="jogador"></span>
+        </p>
+
+    </header>
+
+
+    <section class="hub-content">
+
+        <aside class="ranking-card">
+
+            <h2>Arquivo das Almas</h2>
+
+            <p>
+
+                Consulte os melhores tempos registrados
+                neste dispositivo.
+
+            </p>
+
+            <a href="ranking.html">
+
+                Ver Ranking
+
+            </a>
+
+        </aside>
+
+
+        <section class="games">
+
+            <a
+                class="game-card memoria"
+                href="memoria.html">
+
+                <h2>
+                    Memória das Flores Mortas
+                </h2>
+
+                <p>
+
+                    Recupere todas as lembranças
+                    escondidas entre as flores.
+
+                </p>
+
+            </a>
+
+
+            <a
+                class="game-card puzzle"
+                href="puzzle.html">
+
+                <h2>
+
+                    Visões do Horror
+
+                </h2>
+
+                <p>
+
+                    Reorganize todas as peças
+                    para revelar a imagem.
+
+                </p>
+
+            </a>
+
+        </section>
+
+    </section>
+
+</main>
+
+<script>
+
+const jogador = localStorage.getItem("nightfallPlayer");
+
+document.getElementById("jogador").textContent =
+jogador || "Visitante";
+
+</script>
+
+</body>
+</html>

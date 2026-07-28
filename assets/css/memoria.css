@@ -1,0 +1,153 @@
+.memoria{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:2rem;
+
+}
+
+#tabuleiro{
+
+    margin:2.5rem 0;
+
+    display:grid;
+
+   grid-template-columns:repeat(4,140px);
+
+   gap:20px;
+
+}
+
+#tabuleiro img{
+
+    object-fit:cover;
+
+background:#111;
+
+    width:130px;
+
+height:130px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    border:1px solid var(--border);
+
+    transition:
+transform .25s,
+box-shadow .25s,
+border-color .25s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+}
+
+#tabuleiro img:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.45);
+    
+    border-color:var(--text);
+
+}
+
+@media(max-width:650px){
+
+#tabuleiro{
+
+grid-template-columns:repeat(2,130px);
+
+}
+
+}
+
+.status{
+
+    display:flex;
+
+    gap:4rem;
+
+    margin-bottom:2rem;
+
+    color:var(--text-secondary);
+
+    letter-spacing:2px;
+
+    font-size:1.1rem;
+
+}
+
+
+#vitoria{
+
+    display:none;
+
+    margin-top:2rem;
+
+    text-align:center;
+
+    background:rgba(24,24,24,.95);
+
+    border:1px solid var(--border);
+
+    padding:2rem;
+
+    border-radius:18px;
+
+}
+
+
+#vitoria button{
+
+    margin-top:1rem;
+
+    padding:12px 30px;
+
+    background:transparent;
+
+    border:1px solid var(--text-secondary);
+
+    color:var(--text);
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#vitoria button:hover{
+
+    background:var(--text);
+
+    color:#111;
+
+}
+
+
+@media(max-width:650px){
+
+
+.status{
+
+flex-direction:column;
+
+gap:.5rem;
+
+text-align:center;
+
+}
+
+
+}

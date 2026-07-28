@@ -1,0 +1,206 @@
+#home-video{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    z-index:-2;
+
+    filter:brightness(.95) saturate(.95);
+
+}
+
+.home-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.25);
+
+    z-index:-1;
+
+}
+
+
+.home{
+
+    position:relative;
+
+    z-index:1;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:3rem;
+
+    padding:2rem;
+
+}
+
+
+.hero{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:1rem;
+
+    max-width:700px;
+
+}
+
+
+.logo{
+
+    font-size:5rem;
+
+    letter-spacing:6px;
+
+    color:var(--primary);
+
+    margin-bottom:1rem;
+
+}
+
+.subtitle{
+
+    text-transform:uppercase;
+
+    letter-spacing:8px;
+
+    color:var(--text);
+
+    margin-bottom:1.5rem;
+
+}
+
+.description{
+
+    max-width:650px;
+
+    color:var(--text-secondary);
+
+    font-size:1.05rem;
+
+}
+
+.login-card{
+
+    width:420px;
+
+    background:var(--surface);
+
+border:1px solid rgba(255,255,255,.12);
+
+    border-radius:35px;
+
+    padding:2.5rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+    margin:0 auto;
+backdrop-filter:blur(6px);
+background:rgba(18,18,18,.65);
+
+}
+
+.login-card h2{
+
+    text-align:center;
+
+    color:var(--text);
+
+    font-weight:normal;
+
+}
+
+.login-card input{
+
+    background:#140d24;
+
+    color:white;
+
+    border:2px solid var(--border);
+
+    border-radius:20px;
+
+    padding:15px;
+
+    font-size:1rem;
+
+    outline:none;
+
+}
+
+.login-card input:focus{
+
+    border-color:var(--primary);
+
+}
+
+.login-card button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:var(--primary);
+
+    color:#120A1F;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.login-card button:hover{
+
+    transform:scale(1.03);
+
+}
+
+@media(max-width:600px){
+
+.logo{
+
+font-size:3rem;
+
+}
+
+.login-card{
+
+width:100%;
+
+}
+
+}
