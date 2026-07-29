@@ -46,6 +46,7 @@ let tentativas = 0;
 let paresEncontrados = 0;
 
 let tempo = 0;
+let tempoTotal = 0;
 let intervalo;
 
 const tabuleiro = document.getElementById("tabuleiro");
@@ -70,6 +71,32 @@ function iniciarJogo(){
 cartasAtuais.sort(()=>Math.random()-0.5);
 
     tabuleiro.innerHTML = "";
+
+const quantidadeCartas = cartasAtuais.length;
+
+if(quantidadeCartas === 8){
+    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+}
+
+if(quantidadeCartas === 12){
+    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+}
+
+if(quantidadeCartas === 16){
+    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+}
+
+if(faseAtual === 0){
+    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+}
+
+if(faseAtual === 1){
+    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+}
+
+if(faseAtual === 2){
+    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+}
 
     tentativas = 0;
     paresEncontrados = 0;
@@ -178,7 +205,7 @@ function verificarPar(){
 function proximaFase(){
 
     if(faseAtual < fases.length - 1){
-
+    tempoTotal += tempo;
         faseAtual++;
 
         iniciarJogo();
@@ -199,10 +226,11 @@ function finalizarCampanha(){
 
     if(jogador && typeof salvarPontuacao === "function"){
 
+        tempoTotal += tempo;
         salvarPontuacao(
             "Memória",
             jogador,
-            tempo,
+            tempoTotal,
             tentativas
         );
 
@@ -210,6 +238,10 @@ function finalizarCampanha(){
 }
 
 function reiniciar(){
+
+    faseAtual = 0;
+    campanhaFinalizada = false;
+
     iniciarJogo();
 }
 

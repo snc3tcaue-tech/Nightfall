@@ -224,7 +224,7 @@ function adicionarArrastar(peca){
     function iniciarArraste(e){
 
         arrastando = peca;
-
+        elemento.classList.add("arrastando");
 
         offsetX =
         e.clientX - peca.x;
@@ -336,7 +336,7 @@ peca.elemento.style.top = peca.y + "px";
 
 
         peca.elemento.style.zIndex = 1;
-
+        elemento.classList.remove("arrastando");
 
         arrastando = null;
 

@@ -32,9 +32,19 @@
     width: 360px;
     height: 360px;
 
-    background: #080808;
+    background: #050505;
 
-    border: 1px solid #333;
+    border: 2px solid #8b0000;
+
+    box-shadow:
+        0 0 8px rgba(139,0,0,.6),
+        inset 0 0 10px rgba(255,255,255,.05);
+
+    background-image:
+        linear-gradient(to right, rgba(255,255,255,.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.18) 1px, transparent 1px);
+
+    background-size: 90px 90px;
 
     box-shadow:
         0 0 30px rgba(0,0,0,.9);
@@ -48,7 +58,7 @@
 
     background-repeat: no-repeat;
 
-    border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.45);
 
     box-sizing: border-box;
 
@@ -264,4 +274,14 @@
 
     transform:scale(1.15);
 
+}
+
+.peca.arrastando{
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 12px rgba(180,0,0,.7);
+
+    z-index:20;
 }
