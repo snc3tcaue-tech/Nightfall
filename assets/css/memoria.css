@@ -1,38 +1,52 @@
 .memoria{
 
     min-height:100vh;
+    box-sizing:border-box;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
+    justify-content:flex-start;
 
-    justify-content:center;
+    padding:1rem;
+    padding-top:2rem;
 
-    padding:2rem;
+}
+
+body{
+
+   background-image:url("../img/memoria/fundomemoria_.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 
 }
 
 #tabuleiro{
 
-margin:2.5rem 0;
+    margin:1.5rem 0;
 
-display:grid;
+    display:grid;
 
-gap:20px;
+    gap:20px;
+
+    padding:20px;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(3px);
+    border-radius:20px;
 
 }
 
 #tabuleiro img{
 
-    object-fit:cover;
+    object-fit: cover;
+    background: #111;
 
 background:#111;
 
-    width:130px;
-
-height:130px;
+  width:140px;
+height:150px;
 
     border-radius:12px;
 
@@ -45,7 +59,7 @@ transform .25s,
 box-shadow .25s,
 border-color .25s;
 
-    box-shadow:0 8px 20px rgba(0,0,0,.35);
+   box-shadow:0 10px 30px rgba(0,0,0,.65);
 
 }
 
@@ -70,18 +84,21 @@ grid-template-columns:repeat(2,130px);
 }
 
 .status{
-
+    
     display:flex;
-
+    
     gap:4rem;
-
+    
     margin-bottom:2rem;
-
-    color:var(--text-secondary);
+    
+    color:#F2F2F2;
+opacity:.85;
+    
+    font-weight:550;
 
     letter-spacing:2px;
 
-    font-size:1.1rem;
+    text-shadow:0 0 8px rgba(0,0,0,.8);
 
 }
 
@@ -90,11 +107,16 @@ grid-template-columns:repeat(2,130px);
 
     display:none;
 
-    margin-top:2rem;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:1000;
 
     text-align:center;
 
-    background:rgba(24,24,24,.95);
+    background:rgba(10,10,10,.88);
+    backdrop-filter:blur(6px);
 
     border:1px solid var(--border);
 

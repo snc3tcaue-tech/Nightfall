@@ -2,36 +2,36 @@ const fases = [
     {
         nivel: 1,
         cartas: [
-            "../assets/img/memoria/carta1.jfif",
-            "../assets/img/memoria/carta2.jfif",
-            "../assets/img/memoria/carta3.jpg",
-            "../assets/img/memoria/carta4.png"
+            "../assets/img/memoria/carta1_.jpg",
+            "../assets/img/memoria/carta2_.jpg",
+            "../assets/img/memoria/carta3_.jpg",
+            "../assets/img/memoria/carta4_.jpg"
         ]
     },
 
     {
         nivel: 2,
         cartas: [
-            "../assets/img/memoria/carta1.jfif",
-            "../assets/img/memoria/carta2.jfif",
-            "../assets/img/memoria/carta3.jpg",
-            "../assets/img/memoria/carta4.png",
-            "../assets/img/memoria/carta5.jpg",
-            "../assets/img/memoria/carta6.jpg"
+            "../assets/img/memoria/carta1_.jpg",
+            "../assets/img/memoria/carta2_.jpg",
+            "../assets/img/memoria/carta3_.jpg",
+            "../assets/img/memoria/carta4_.jpg",
+            "../assets/img/memoria/carta5_.jpg",
+            "../assets/img/memoria/carta6_.jpg"
         ]
     },
 
     {
         nivel: 3,
         cartas: [
-            "../assets/img/memoria/carta1.jfif",
-            "../assets/img/memoria/carta2.jfif",
-            "../assets/img/memoria/carta3.jpg",
-            "../assets/img/memoria/carta4.png",
-            "../assets/img/memoria/carta5.jpg",
-            "../assets/img/memoria/carta6.jpg",
-            "../assets/img/memoria/carta7.jpg",
-            "../assets/img/memoria/carta8.jpg"
+            "../assets/img/memoria/carta1_.jpg",
+            "../assets/img/memoria/carta2_.jpg",
+            "../assets/img/memoria/carta3_.jpg",
+            "../assets/img/memoria/carta4_.jpg",
+            "../assets/img/memoria/carta5_.jpg",
+            "../assets/img/memoria/carta6_.jpg",
+            "../assets/img/memoria/carta7_.jpg",
+            "../assets/img/memoria/carta8_.jpg"
         ]
     }
 ];
@@ -122,7 +122,7 @@ bloqueado = false;
 
         const carta = document.createElement("img");
 
-        carta.src = "../assets/img/memoria/carta-verso2.png";
+        carta.src = "../assets/img/memoria/carta-verso.jpg";
         carta.dataset.imagem = imagem;
         carta.onclick = virarCarta;
 
@@ -191,8 +191,8 @@ function verificarPar(){
 
         setTimeout(()=>{
 
-            primeiraCarta.src = "../assets/img/memoria/carta-verso2.png";
-            segundaCarta.src = "../assets/img/memoria/carta-verso2.png";
+            primeiraCarta.src = "../assets/img/memoria/carta-verso.jpg";
+            segundaCarta.src = "../assets/img/memoria/carta-verso.jpg";
 
             primeiraCarta = null;
             segundaCarta = null;
