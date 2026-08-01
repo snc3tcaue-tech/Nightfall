@@ -3,6 +3,13 @@
     width: 100%;
     min-height: 80vh;
 
+
+
+
+    touch-action:none;
+
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,9 +36,6 @@
 
     position: relative;
 
-    width: 360px;
-    height: 360px;
-
     background: #050505;
 
     border: 2px solid #8b0000;
@@ -44,17 +48,24 @@
         linear-gradient(to right, rgba(255,255,255,.18) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,.18) 1px, transparent 1px);
 
-    background-size: 90px 90px;
-
     box-shadow:
         0 0 30px rgba(0,0,0,.9);
-
 }
 
 
 .peca {
 
+
+    touch-action:none;
+    user-select:none;
+    -webkit-user-select:none;
+
+
+
+
     cursor: grab;
+
+touch-action:none;
 
     background-repeat: no-repeat;
 
@@ -284,4 +295,83 @@
         0 0 12px rgba(180,0,0,.7);
 
     z-index:20;
+}
+
+.btn-voltar{
+    position:fixed;
+    top:20px;
+    left:20px;
+
+    padding:10px 18px;
+
+    background:rgba(0,0,0,.5);
+
+    border:1px solid #555;
+
+    border-radius:12px;
+
+    color:white;
+
+    text-decoration:none;
+
+    z-index:999;
+}
+
+.page-title{
+
+    margin-top:80px;
+
+}
+@media (max-width: 768px){
+
+    .status{
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .page-title{
+        margin-top: 70px;
+        text-align: center;
+    }
+
+    #tabuleiro{
+        transform: scale(.75);
+        transform-origin: center top;
+    }
+
+    .card-vitoria{
+        width: 90%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .status{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    #tabuleiro{
+        width:295px !important;
+        height:295px !important;
+
+        background-size:
+        calc(295px / 3) calc(295px / 3);
+    }
+
+    .page-title{
+        margin-top:40px;
+        font-size:2rem;
+        text-align:center;
+    }
+
+    .btn-voltar{
+        top:10px;
+        left:10px;
+    }
 }

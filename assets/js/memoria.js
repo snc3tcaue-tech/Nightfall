@@ -43,6 +43,7 @@ let faseAtual = 0;
 let campanhaFinalizada = false;
 
 let tentativas = 0;
+let tentativasTotal = 0;
 let paresEncontrados = 0;
 
 let tempo = 0;
@@ -57,45 +58,46 @@ const faseTela = document.getElementById("faseTela");
 function iniciarJogo(){
 
     if(!tabuleiro) return;
-
+    
     if(faseTela){
-    faseTela.textContent =
-    `Fase ${faseAtual + 1} / ${fases.length}`;
-}
-
+        faseTela.textContent =
+        `Fase ${faseAtual + 1} / ${fases.length}`;
+    }
+    
     let cartasAtuais = [
-    ...fases[faseAtual].cartas,
-    ...fases[faseAtual].cartas
-];
-
-cartasAtuais.sort(()=>Math.random()-0.5);
-
+        ...fases[faseAtual].cartas,
+        ...fases[faseAtual].cartas
+    ];
+    
+    cartasAtuais.sort(()=>Math.random()-0.5);
+    
     tabuleiro.innerHTML = "";
-
-const quantidadeCartas = cartasAtuais.length;
-
-if(quantidadeCartas === 8){
-    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+    
+    const quantidadeCartas = cartasAtuais.length;
+    const tamanhoCarta = window.innerWidth < 768 ? 75 : 140;
+    
+    if(quantidadeCartas === 8){
+        tabuleiro.style.gridTemplateColumns = `repeat(4,${tamanhoCarta}px)`;
 }
 
 if(quantidadeCartas === 12){
-    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+    tabuleiro.style.gridTemplateColumns = `repeat(4,${tamanhoCarta}px)`;
 }
 
 if(quantidadeCartas === 16){
-    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+    tabuleiro.style.gridTemplateColumns = `repeat(4,${tamanhoCarta}px)`;
 }
 
 if(faseAtual === 0){
-    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+    tabuleiro.style.gridTemplateColumns = `repeat(4,${tamanhoCarta}px)`;
 }
 
 if(faseAtual === 1){
-    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+    tabuleiro.style.gridTemplateColumns = `repeat(4,${tamanhoCarta}px)`;
 }
 
 if(faseAtual === 2){
-    tabuleiro.style.gridTemplateColumns = "repeat(4,140px)";
+    tabuleiro.style.gridTemplateColumns = `repeat(4,${tamanhoCarta}px)`;
 }
 
     tentativas = 0;
@@ -205,12 +207,16 @@ function verificarPar(){
 function proximaFase(){
 
     if(faseAtual < fases.length - 1){
-    tempoTotal += tempo;
+
+        tempoTotal += tempo;
+        tentativasTotal += tentativas;
+
         faseAtual++;
 
         iniciarJogo();
 
     }
+
 }
 
 function finalizarCampanha(){
@@ -227,11 +233,13 @@ function finalizarCampanha(){
     if(jogador && typeof salvarPontuacao === "function"){
 
         tempoTotal += tempo;
+        tentativasTotal += tentativas;
+
         salvarPontuacao(
             "Memória",
             jogador,
             tempoTotal,
-            tentativas
+            tentativasTotal
         );
 
     }
@@ -241,6 +249,9 @@ function reiniciar(){
 
     faseAtual = 0;
     campanhaFinalizada = false;
+
+    tempoTotal = 0;
+    tentativasTotal = 0;
 
     iniciarJogo();
 }

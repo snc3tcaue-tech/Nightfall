@@ -192,15 +192,22 @@ background:rgba(18,18,18,.65);
 @media(max-width:600px){
 
 .logo{
+    font-size:2.2rem;
+    letter-spacing:3px;
+}
 
-font-size:3rem;
+.subtitle{
+    letter-spacing:3px;
+    font-size:.9rem;
+}
 
+.description{
+    font-size:.9rem;
 }
 
 .login-card{
-
-width:100%;
-
+    width:95%;
+    padding:1.5rem;
 }
 
 }

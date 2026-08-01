@@ -94,11 +94,30 @@ mask-image: radial-gradient(circle, black 55%, transparent 100%);
 
 .voltar{
 
+    position:fixed;
+
+    top:30px;
+    left:30px;
+
     color:var(--text-secondary);
 
     letter-spacing:2px;
 
+    text-decoration:none;
+
+    font-size:1rem;
+
+    border:1px solid #707070;
+
+    padding:10px 22px;
+
+    border-radius:14px;
+
+    background:rgba(0,0,0,.25);
+
     transition:.25s;
+
+    z-index:100;
 
 }
 
@@ -111,18 +130,23 @@ mask-image: radial-gradient(circle, black 55%, transparent 100%);
 @media(max-width:768px){
 
     .intro-card{
-
         width:90%;
-
         padding:2rem;
-
     }
 
-    .intro-card h1{
+   .intro-card h1{
+    font-size:1.6rem;
+    letter-spacing:2px;
+}
 
-        font-size:2rem;
+.intro h1{
+    font-size:2rem;
+    letter-spacing:3px;
+}
 
-    }
+.intro-video{
+    width:130px;
+}
 
 }
 

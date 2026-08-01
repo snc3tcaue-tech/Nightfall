@@ -304,8 +304,43 @@ body::after {
     .ranking-grid {
 
         grid-template-columns:1fr;
-
     }
 
+    .title{
+
+         margin-top:80px;
+font-size:1.8rem;
+
+}
+
+.box{
+
+padding:1rem;
+
+}
+
+.ranking{
+    padding-top:80px;
+}
+
+.btn-back {
+    position:fixed;
+    top:15px;
+    left:20px;
+
+    padding:10px 18px;
+
+    background:rgba(0,0,0,.5);
+
+    border:1px solid #555;
+
+    border-radius:12px;
+
+    color:white;
+
+    text-decoration:none;
+
+    z-index:999;
+}
 
 }

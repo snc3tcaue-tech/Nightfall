@@ -174,3 +174,34 @@ width:100%;
 }
 
 }
+
+@media(max-width:768px){
+
+.hub{
+    width:95%;
+    padding:20px 0;
+}
+
+.hub-header{
+    margin-bottom:30px;
+}
+
+.hub-header h1{
+    font-size:2.2rem;
+    letter-spacing:4px;
+}
+
+.hub-header p{
+    font-size:1rem;
+}
+
+.game-card{
+    padding:20px;
+    min-height:auto;
+}
+
+.game-card h2{
+    font-size:1.4rem;
+}
+
+}

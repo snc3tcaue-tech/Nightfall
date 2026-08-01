@@ -37,7 +37,7 @@ let movimentosTotal = 0;
 let campanhaIniciada = false;
 let campanhaFinalizada = false;
 
-const tamanho = 90;
+let tamanho;
 
 let pecas = [];
 let movimentos = 0;
@@ -48,6 +48,23 @@ let arrastando = null;
 let offsetX = 0;
 let offsetY = 0;
 
+function posicaoOcupada(x, y, ignorarPeca){
+
+    return pecas.some(p =>
+        p !== ignorarPeca &&
+        p.x === x &&
+        p.y === y
+    );
+}
+
+function calcularTamanho() {
+    if (window.innerWidth < 768) {
+       const larguraTabuleiro = Math.min(window.innerWidth * 0.9, 295);
+tamanho = Math.floor(larguraTabuleiro / colunas);
+    } else {
+        tamanho = 90;
+    }
+}
 
 function iniciar(){
 
@@ -55,6 +72,7 @@ function iniciar(){
 
     linhas = fases[faseAtual].linhas;
     colunas = fases[faseAtual].colunas;
+    calcularTamanho();
     imagemAtual = fases[faseAtual].imagem;
 
     tabuleiro.innerHTML = "";
@@ -224,6 +242,9 @@ function adicionarArrastar(peca){
     function iniciarArraste(e){
 
         arrastando = peca;
+        peca.antigoX = peca.x;
+        peca.antigoY = peca.y;
+
         elemento.classList.add("arrastando");
 
         offsetX =
@@ -291,8 +312,21 @@ function adicionarArrastar(peca){
         movimentosTela.textContent =
         movimentos;
 
-peca.x = Math.round(peca.x / tamanho) * tamanho;
-peca.y = Math.round(peca.y / tamanho) * tamanho;
+const destinoX = Math.round(peca.x / tamanho) * tamanho;
+const destinoY = Math.round(peca.y / tamanho) * tamanho;
+
+if(!posicaoOcupada(destinoX, destinoY, peca)){
+
+    peca.x = destinoX;
+    peca.y = destinoY;
+
+}else{
+
+    peca.x = peca.antigoX;
+    peca.y = peca.antigoY;
+
+}
+
 peca.elemento.style.left = peca.x + "px";
 peca.elemento.style.top = peca.y + "px";
 
@@ -373,9 +407,6 @@ function verificarVitoria(){
 
     clearInterval(intervalo);
 
-    tempoTotal += tempo;
-    movimentosTotal += movimentos;
-
     vitoriaTela.style.display = "block";
 
     const botao =
@@ -412,6 +443,9 @@ function proximaFase(){
 
     if(faseAtual < fases.length - 1){
 
+        tempoTotal += tempo;
+        movimentosTotal += movimentos;
+
         faseAtual++;
 
         iniciar();
@@ -432,13 +466,16 @@ function finalizarCampanha(){
     const nome = prompt("Digite seu nome:");
     if(nome){
 
-        salvarPontuacao(
-            "Puzzle",
-            nome,
-            tempoTotal,
-            movimentosTotal
-        );
-    }
+    tempoTotal += tempo;
+    movimentosTotal += movimentos;
+
+    salvarPontuacao(
+        "Puzzle",
+        nome,
+        tempoTotal,
+        movimentosTotal
+    );
+}
 
     vitoriaTela.style.display = "block";
 }
@@ -450,5 +487,54 @@ function fecharVitoria(){
 function abrirRanking(){
     window.location.href = "ranking.html";
 }
+
+document.addEventListener("touchstart", function(e){
+
+    const toque = e.touches[0];
+
+    const alvo = document.elementFromPoint(
+        toque.clientX,
+        toque.clientY
+    );
+
+    if(alvo && alvo.classList.contains("peca")){
+
+        alvo.dispatchEvent(new MouseEvent(
+            "mousedown",
+            {
+                clientX: toque.clientX,
+                clientY: toque.clientY,
+                bubbles:true
+            }
+        ));
+
+    }
+
+});
+
+
+document.addEventListener("touchmove", function(e){
+
+    const toque = e.touches[0];
+
+    document.dispatchEvent(new MouseEvent(
+        "mousemove",
+        {
+            clientX: toque.clientX,
+            clientY: toque.clientY,
+            bubbles:true
+        }
+    ));
+
+});
+
+
+document.addEventListener("touchend", function(){
+
+    document.dispatchEvent(
+        new MouseEvent("mouseup")
+    );
+
+});
 
 window.onload = iniciar;
