@@ -58,9 +58,34 @@
 
     </section>
 
+    
 </main>
+<div id="modalNome" class="modal-nome" style="display:none;">
+
+    <div class="modal-box">
+
+        <h2>Salvar pontuação</h2>
+
+        <input id="inputNome" placeholder="Seu nome">
+
+        <div class="acoes-modal">
+
+            <button onclick="fecharModalNome()">
+                Cancelar
+            </button>
+
+            <button onclick="confirmarNome()">
+                Salvar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
 
 <script src="../assets/js/ranking.js"></script>
+<script src="../assets/js/modal.js"></script>
     <script src="../assets/js/memoria.js"></script>
 
 </body>

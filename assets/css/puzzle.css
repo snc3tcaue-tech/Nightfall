@@ -36,6 +36,9 @@
 
     position: relative;
 
+       max-width: 95vw;
+    max-height: 70vh;
+
     background: #050505;
 
     border: 2px solid #8b0000;
@@ -48,8 +51,11 @@
         linear-gradient(to right, rgba(255,255,255,.18) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255,255,255,.18) 1px, transparent 1px);
 
+    background-size: 90px 90px;
+
     box-shadow:
         0 0 30px rgba(0,0,0,.9);
+
 }
 
 
@@ -336,11 +342,7 @@ touch-action:none;
         text-align: center;
     }
 
-    #tabuleiro{
-        transform: scale(.75);
-        transform-origin: center top;
-    }
-
+    
     .card-vitoria{
         width: 90%;
         max-width: 320px;
@@ -357,9 +359,7 @@ touch-action:none;
     }
 
     #tabuleiro{
-        width:295px !important;
-        height:295px !important;
-
+       
         background-size:
         calc(295px / 3) calc(295px / 3);
     }

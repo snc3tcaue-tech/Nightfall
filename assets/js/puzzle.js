@@ -34,6 +34,9 @@ let imagemAtual = fases[faseAtual].imagem;
 
 let tempoTotal = 0;
 let movimentosTotal = 0;
+
+let jogoAtual = "Puzzle";
+
 let campanhaIniciada = false;
 let campanhaFinalizada = false;
 
@@ -463,21 +466,10 @@ function finalizarCampanha(){
 
     campanhaFinalizada = true;
 
-    const nome = prompt("Digite seu nome:");
-    if(nome){
-
     tempoTotal += tempo;
     movimentosTotal += movimentos;
 
-    salvarPontuacao(
-        "Puzzle",
-        nome,
-        tempoTotal,
-        movimentosTotal
-    );
-}
-
-    vitoriaTela.style.display = "block";
+    abrirModalNome();
 }
 
 

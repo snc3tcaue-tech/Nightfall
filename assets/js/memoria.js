@@ -48,6 +48,10 @@ let paresEncontrados = 0;
 
 let tempo = 0;
 let tempoTotal = 0;
+
+let movimentosTotal = 0;
+let jogoAtual = "Memória";
+
 let intervalo;
 
 const tabuleiro = document.getElementById("tabuleiro");
@@ -228,21 +232,10 @@ function finalizarCampanha(){
     campanhaFinalizada = true;
 
 
-    const jogador = prompt("Digite seu nome:");
+   tempoTotal += tempo;
+movimentosTotal = tentativasTotal + tentativas;
 
-    if(jogador && typeof salvarPontuacao === "function"){
-
-        tempoTotal += tempo;
-        tentativasTotal += tentativas;
-
-        salvarPontuacao(
-            "Memória",
-            jogador,
-            tempoTotal,
-            tentativasTotal
-        );
-
-    }
+abrirModalNome();
 }
 
 function reiniciar(){
